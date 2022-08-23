@@ -1,0 +1,10 @@
+
+## 학습 후 저장한 모델을 불러와 사용(.pth) 
+result = inference_segmentor(segmenter, img)
+
+ >KeyError: 'PALETTE' 
+
+mmsegmentation/tools/train.py 를 열어보니 model.CLASSE 정의되어있고 model.PALETTE는 없었다.
+이 부분을  model.PALETTE = dataset[0].PALETTE로 수정
+
+cf) https://github.com/open-mmlab/mmsegmentation/issues/129
