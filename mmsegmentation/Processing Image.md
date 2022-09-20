@@ -14,9 +14,16 @@
   
   
   
-  ### 
+  ### 수정 계획  
+
 1. ZipFile 모듈로 압축 풀지않고 데이터 가져오기
   - ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰주고 img는 채널별 저장
   - ann은 바로 3번 적용해 merge해서 저장하기
+  - 각 클래스별 데이터 개수 확인, 데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기(3번에서)
  
 2. merging channel
+
+3. data split
+-  train/val/test 비율 설정 및 data split 
+-  img 파일명으로 ann폴더 내 파일들과 매칭하면서 이상없는지 한번더 확인해주기
+-  데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기
