@@ -8,3 +8,15 @@ mmsegmentation/tools/train.py 를 열어보니 model.CLASSE 정의되어있고 m
 이 부분을  model.PALETTE = dataset[0].PALETTE로 수정
 
 cf) https://github.com/open-mmlab/mmsegmentation/issues/129
+
+
+
+## nvcc, gcc 환경 구축
+pip install -U openmim
+ mim install mmcv-full
+
+nvcc 환경구축
+conda install cuda -c nvidia
+
+apt update
+apt-get install gcc
