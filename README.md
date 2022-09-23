@@ -1,6 +1,9 @@
 # DL_Coding
 
 
+# 실험하는 방식
+- 전체 데이터를 다 돌리기보다, 적은 양으로 아이디어가 작동하는지 확인한 후, 마지막에 최종적으로 가장 좋은 것으로 실험 들리기
+
 ## mmsegmentation
 
 1. 데이터는 기본적으로 RGB channel로 되어있는데 sementicsegmentation을 위해서는 annotated data를 각 클래스로 매핑해 1차원으로 만들어주어야한다
