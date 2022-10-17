@@ -47,6 +47,10 @@ __base__외에 train_pipline, test_pipeline 등도 목적에 맞게 바꿔주면
 #### 그럼 이제 __base__에 있는 파일들을 하나씩 수정해보자
 *원본을 복사해 수정하는 것을 적극 권장
 
+## 사용 모델
+![image](https://user-images.githubusercontent.com/61492320/196108149-ec607e76-f43f-485b-bc07-be8825b919c6.png)
+![image](https://user-images.githubusercontent.com/61492320/196108162-269f4a81-638e-4791-a2c7-02336b1ce35b.png)
+![image](https://user-images.githubusercontent.com/61492320/196108184-5ff2b5dd-9e70-4a6c-8286-c0a954d58a75.png)
 
 
 
