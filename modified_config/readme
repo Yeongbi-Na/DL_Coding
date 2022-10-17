@@ -1,1 +1,10 @@
-asdf
+## 사용 모델
+![image](https://user-images.githubusercontent.com/61492320/196108149-ec607e76-f43f-485b-bc07-be8825b919c6.png)
+![image](https://user-images.githubusercontent.com/61492320/196108162-269f4a81-638e-4791-a2c7-02336b1ce35b.png)
+![image](https://user-images.githubusercontent.com/61492320/196108184-5ff2b5dd-9e70-4a6c-8286-c0a954d58a75.png)
+
+
+### __base__
+- ade_20k_rice.py 
+- scheduel.py
+- dataset
