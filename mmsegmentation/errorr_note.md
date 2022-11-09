@@ -29,8 +29,9 @@ mmseg/models/segmentor/builder.py 에서 pretrained 부분을 수정했더니
 
 
 ### 모델 성능
+![image](https://user-images.githubusercontent.com/61492320/200710416-6c4bc2c2-5862-4d3f-b2fa-8b96d7a99fb4.png)
+
 모델 개발 업무를 다른 연구원님이랑 똑같은 프로세스를 수행했는데 내 모델이 normal, background 외에는 정확도가 0에 가까웠다
 코드를 비교해보니 모델 config 파일의 pretrained='open-mmlab://resnet50_v1c', 이 부분을 None으로 바꿔주고 
 cfg.load_from = '/nyb/yb_RiceSeg/RiceSeg/pretrained_chkp/knet_s3_pspnet_r50-d8_8x2_512x512_adamw_80k_ade20k_20220228_054634-d2c72240.pth'
-이렇게 적절한 모델을 다운받아서 cfg 파일에 반영해주면 모델이 정상적으로 성능이 나온다
-
+이렇게 적절한 모델을 다운받아서 cfg 파일에 반영해주면 다른 클래스에 있어서도 모델의 성능이 
