@@ -1,7 +1,4 @@
-## 서버 접속하기 - 블로그로 연결
-
-[비밀번호 없이 키로 서버 접속하기](https://blog.naver.com/ongbbb/222929058444)
-
+# 서버 접속하기 
 
 ### 장점
 
@@ -12,6 +9,7 @@
 (code 255: 원격 서버에 접속은 가능 but 컨테이너에 접속이 안됨)
 
 
+</br>
 
 ### 해야할 일
 
@@ -20,7 +18,9 @@
 - ida_rsa.pub 키 등록 (서버에서)
 
 
-1. ida_rsa.pub 키 발급 (로컬에서)
+</br>
+
+## 1. ida_rsa.pub 키 발급 (로컬에서)
 
 https://playon.tistory.com/115
 
@@ -32,7 +32,7 @@ https://playon.tistory.com/115
 
 
 
-2. ida_rsa.pub 키 등록 (서버에서)
+## 2. ida_rsa.pub 키 등록 (서버에서)
 
 일단 서버에 접속한 후 키 옮기기
 
@@ -52,7 +52,7 @@ chmod 600 .ssh/authorized_keys
 
 
 
-3. vs code에 키 등록
+## 3. vs code에 키 등록
 
 ctrl+shift+p 를 누르면 이런 화면이 뜬다
 
@@ -92,7 +92,11 @@ Dev Container : Attaching to Running container~~ 클릭
 
 
 
-## 컨테이너 내에서 환경 구축
+
+</br></br>
+
+
+# 컨테이너 내에서 환경 구축
 ```bash
 pip install mmcv
 apt-get install libgl1-mesa-glx
