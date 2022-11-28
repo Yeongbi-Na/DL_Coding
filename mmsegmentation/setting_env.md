@@ -104,5 +104,7 @@ pip install -U openmim
 mim install mmcv-full==1.6.0
 apt install nvidia-cuda-toolkit
 
-pip install mmseg
+#mmsegmentation 경로로 이동한 후 
+cd mmsegmentation
+pip install -v -e .
 ```
