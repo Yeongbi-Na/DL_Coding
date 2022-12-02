@@ -1,3 +1,10 @@
+
+annotation 이미지 클래스 매핑
+.py
+
+포아송 블렌딩 
+.py
+
 ## 기록
 ### 초기 계획
 1. ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰준후 ann_png/img_png 폴더에 저장
