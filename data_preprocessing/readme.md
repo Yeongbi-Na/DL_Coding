@@ -1,5 +1,5 @@
 ## 기록
-### 현재 프로세스
+### 초기 계획
 1. ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰준후 ann_png/img_png 폴더에 저장
   - 경로에 원천/ 라벨 & channel 체크
   - 경로에 한글있으면 경로명 체크 불가하므로 fileName.encode('cp437').decode('cp949') 처럼 인코드, 디코드 설정
@@ -14,7 +14,6 @@
   - class, palette 정보를 input으로 넘겨주고, output으로 각 클래스를 포함한 파일명을 주도록 수정 필요
   
   
-  
   ### 수정 계획(ver.9월)
 
 1. ZipFile 모듈로 압축 풀지않고 데이터 가져오기
@@ -22,6 +21,8 @@
   - ann은 바로 3번 적용해 merge해서 저장하기
   - 각 클래스별 데이터 개수 확인, 데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기(3번에서)
  
+</br>
+
 2. merging channel
 
 3. data split
@@ -40,6 +41,8 @@
 - png/ tif, tiff인 파일 경로 가져오기
 - ann, img 파일명 잘 매칭되는지 확인
 - 채널명에 오타 없는지 확인
+
+</br>
 
   ### 수정 계획(ver.10월)
   
