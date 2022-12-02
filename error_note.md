@@ -37,3 +37,8 @@ cf) https://github.com/open-mmlab/mmsegmentation/issues/129
 - ### AttributeError: EncoderDecoder: 'IterativeDecodeHead' object has no attribute 'out_channels'
 이런 오류가 발생해서 pretrained 모델 ckpt 파일도 확인하고, dataset class 도 확인하고 pip install -v -e . 도 해봤는데 계속 오류가 났다
 mmseg/models/segmentor/builder.py 에서 pretrained 부분을 수정했더니 해결
+
+
+- ### dataset class 수정 시 오류
+dataset class를 수정했음에도 모델 학습에서 오류가 발생했다. 
+
