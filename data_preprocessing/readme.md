@@ -1,48 +1,44 @@
+## 업무 일지
+### 현재 프로세스
+1. ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰준후 ann_png/img_png 폴더에 저장
+  - 경로에 원천/ 라벨 & channel 체크
+  - 경로에 한글있으면 경로명 체크 불가하므로 fileName.encode('cp437').decode('cp949') 처럼 인코드, 디코드 설정
+  - ann/img 파일명 형식이 다름 G_018, G018 이런식이므로 이부분 미리 수정해주기
+  
+2. merging channel
+  - 미리 모듈화해놓은 py 파일
+  - 파일명에 A03 혹은 A02 이렇게 나누어져 있어서 이 부분 반영한 코드 수정 필요
 
-## 클래스 매핑하기
+3. mapping ann 
+  - 모듈화해놓은  py 파일
+  - class, palette 정보를 input으로 넘겨주고, output으로 각 클래스를 포함한 파일명을 주도록 수정 필요
+  
+  
+  
+  ### 수정 계획  
 
-```bash
-def ann_rgb2cls(data_path, num_workers=8, replace=False):
-    print("Converting annotation images to class images...")
-    nocls = np.array([0, 0, 0])
-    cls1 = np.array([245, 39, 8])  # 정상
-    cls2 = np.array([245, 299, 0])  # 도열병
-    cls3 = np.array([26, 0, 255])  # 도복
-    cls4 = np.array([204, 0, 250])  # 결주
-    cls5 = np.array([0, 123, 245])  # 부진
-    class_list = [nocls, cls1, cls2, cls3, cls4, cls5]
-    dx = [0, 0, -1, 1, -1, -1, 1, 1]
-    dy = [1, -1, 0, 0, -1, 1, -1, 1]
+1. ZipFile 모듈로 압축 풀지않고 데이터 가져오기
+  - ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰주고 img는 채널별 저장
+  - ann은 바로 3번 적용해 merge해서 저장하기
+  - 각 클래스별 데이터 개수 확인, 데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기(3번에서)
+ 
+2. merging channel
 
-    def remove_blur(mask, cls_img):
-        w, h = cls_img.shape[:2]
-        for x in range(w):
-            for y in range(h):
-                if not mask[x, y]:
-                    valid = []
-                    for d in range(8):
-                        nx, ny = x+dx[d], y+dy[d]
-                        if 0 <= nx < w and 0 <= ny < h:
-                            valid.append(cls_img[nx][ny])
-                    cls_img[x][y] = np.argmax(np.bincount(valid))
-        return cls_img
+3. data split
+-  train/val/test 비율 설정 및 data split 
+-  img 파일명으로 ann폴더 내 파일들과 매칭하면서 이상없는지 한번더 확인해주기
+-  데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기
 
-    def mapping_without_blur(file_path):
-        img = cv2.imread(file_path)
-        img = np.array(img)
-        dist = []
-        for c in class_list:  # 각 클래스와의 거리 구하기
-            dist.append(np.sum((img - c)*(img - c), axis=2))
-        dist = np.array(dist)
-        min_dist = np.min(dist, axis=0)
-        mask = np.where(min_dist == 0, True, False)
-        mapped_img = np.argmin(dist, axis=0)  # 가장 가까운 거리의 인덱스 할당
-        result = remove_blur(mask, mapped_img)
-        return result
-```
-## 포아송 블렌딩
-### 박스 찾기
-### 포아송 블렌딩 적용
 
+09.22 데이터 이슈사항
+- png만 있어야하는데 json 섞여있ㅇ음
+- R채널에만 없는 데이터 존재, 
+- ann에서는 tif, tiff 섞여있음
+
+
+09.22 데이터 처리 일지
+- png/ tif, tiff인 파일 경로 가져오기
+- ann, img 파일명 잘 매칭되는지 확인
+- 채널명에 오타 없는지 확인
 
 
