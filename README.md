@@ -12,4 +12,4 @@
 ### 모델 학습
 - mmsegmentation 오픈 소스를 기반으로 데이터셋과 목적에 맞게 커스터마이즈 함
 - k-net, segmenter, segformer 세가지 모델을 선정해 활용함
-- 모델 커스터마이즈 방법은 training_model.md 에 자세한 
+- 모델 커스터마이즈에 대한 설명은 training_model.md
