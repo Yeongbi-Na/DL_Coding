@@ -12,7 +12,7 @@
 3. mapping ann 
   - 모듈화해놓은  py 파일
   - class, palette 정보를 input으로 넘겨주고, output으로 각 클래스를 포함한 파일명을 주도록 수정 필요
-  
+  </br>
   
   ### 수정 계획(ver.9월)
 
@@ -20,8 +20,6 @@
   - ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰주고 img는 채널별 저장
   - ann은 바로 3번 적용해 merge해서 저장하기
   - 각 클래스별 데이터 개수 확인, 데이터가 부족한 클래스의 경우 val/ test에 추가로 넣어주기(3번에서)
- 
-</br>
 
 2. merging channel
 
