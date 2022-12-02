@@ -60,3 +60,4 @@ cfg.load_from = '/nyb/yb_RiceSeg/RiceSeg/pretrained_chkp/knet_s3_pspnet_r50-d8_8
 ```
 cfg 파일에 반영해줘야했다.
 이후, 다른 클래스에 있어서도 모델의 성능이 향상됐다
+
