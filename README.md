@@ -11,7 +11,7 @@
 - [setting_in_container](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/setting_in_container.md)
 
 ### data_processing
-- [Annotation 이미지의 클래스 매핑(with 블러 처리)](https://github.com/Yeongbi-Na/GIAI/tree/main/data_preprocessing)
+- [Annotation 이미지의 클래스 매핑(with 블러 처리)](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/mapping_class.py)
 - [포아송 블렌딩]()
 
 ### training models
