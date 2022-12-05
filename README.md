@@ -15,7 +15,7 @@
 - [포아송 블렌딩]()
 
 ### training models
-[mmsegmentation 활용 & 커스터마이즈](https://github.com/Yeongbi-Na/GIAI/blob/main/training_model.md)
+[mmsegmentation 활용 & 커스터마이즈](https://github.com/Yeongbi-Na/GIAI/blob/main/train_example/training_model.md)
 
 ### error note
 [error note](https://github.com/Yeongbi-Na/GIAI/blob/main/error_note.md)
