@@ -1,5 +1,5 @@
 ## 모델 학습하기
-* 최종 산출물(.py)에 모델 학습 과정까지 모두 포함되어있지만 아직 해당 repo는 private 상태라 knet모델 학습을 위해 썼던 knet.ipynb를 업로드.
+최종 산출물(.py)에 모델 학습 과정까지 모두 포함되어있지만 아직 해당 repo는 private 상태라 knet모델 학습을 위해 썼던 knet.ipynb를 업로드.
 
 ### 1. mmsegmentation 다운로드를 하면 </br>
 ![image](https://user-images.githubusercontent.com/61492320/185517019-454aa0db-e3ca-473d-abd6-5fe99b3a2395.png)</br>
