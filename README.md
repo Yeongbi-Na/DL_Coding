@@ -6,7 +6,7 @@
 
 </br>
 
-### 환경 세팅
+### setting environments
 - [connect_server_vscode](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/connect_server_vscode.md)
 - [setting_in_container](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/setting_in_container.md)
 
@@ -17,5 +17,5 @@
 ### training models
 [mmsegmentation 활용 & 커스터마이즈](https://github.com/Yeongbi-Na/GIAI/blob/main/training_model.md)
 
-### 오류 정리
+### error note
 [error note](https://github.com/Yeongbi-Na/GIAI/blob/main/error_note.md)
