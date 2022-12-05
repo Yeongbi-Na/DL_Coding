@@ -16,8 +16,8 @@ def ann_rgb2cls(data_path):
 
     def remove_blur(mask, cls_img):
         w, h = cls_img.shape[:2]
-        for x in range(512):
-            for y in range(512):
+        for x in range(w):
+            for y in range(h):
                 if not mask[x, y]:
                     temp = []
                     for d in range(8):
