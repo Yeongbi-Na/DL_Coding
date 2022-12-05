@@ -8,14 +8,14 @@
 
 ### setting environments
 - [connect_server_vscode](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/connect_server_vscode.md)
-- [setting_in_container](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/setting_in_container.md)
+- [setting_in_container for using mmsegmentation](https://github.com/Yeongbi-Na/GIAI/blob/main/setting_env/setting_in_container.md)
 
 ### data_processing
-- [Annotation 이미지의 클래스 매핑(with 블러 처리)](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/mapping_class.py)
-- [포아송 블렌딩](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/poisong_blending.py)
+- [mappe classs for Annotation images with processing blur)](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/mapping_class.py)
+- [Poissong blending](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/poisong_blending.py)
 
 ### training models
-[mmsegmentation 활용 & 커스터마이즈](https://github.com/Yeongbi-Na/GIAI/blob/main/train_example/training_model.md)
+- [customize mmsegmentation](https://github.com/Yeongbi-Na/GIAI/blob/main/train_example/training_model.md)
 
 ### error note
-[error note](https://github.com/Yeongbi-Na/GIAI/blob/main/error_note.md)
+- [my error note during training models](https://github.com/Yeongbi-Na/GIAI/blob/main/error_note.md)
