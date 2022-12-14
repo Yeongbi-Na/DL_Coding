@@ -4,7 +4,7 @@ annotation 이미지 클래스 매핑
 
 포아송 블렌딩 
 .py
-## Poissong blending 
+## Poissong blending 사용법
 
     
     
