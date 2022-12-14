@@ -9,11 +9,10 @@ import matplotlib.pyplot as plt
 def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
     dx = [1, 0, -1, 0]
     dy = [0, 1, 0, -1]
-    
     source = cv2.imread(scr_dir) 
     target = cv2.imread(tgt_dir)
     ann = cv2.imread(ann_dir)
-    offset = (0, 0) 
+    
     def visualize_imgs():
         print('Source image size:', source.shape[:-1])
         plt.imshow(source[:,:,::-1]) # this is a trick to display the image in here 
@@ -79,14 +78,11 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
             mat_D.setdiag(-1, -1)
             mat_D.setdiag(4)
             mat_D.setdiag(-1, 1)
-                
             mat_A = scipy.sparse.block_diag([mat_D] * n).tolil()
-            
             mat_A.setdiag(-1, 1*m)
             mat_A.setdiag(-1, -1*m)
-            
             return mat_A
-            
+        offset = (0, 0) #
         y_max, x_max = target.shape[:-1]
         y_min, x_min = 0, 0
         x_range = x_max - x_min
@@ -110,7 +106,6 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
                     mat_A[k, k + x_range] = 0
                     mat_A[k, k - x_range] = 0
         mat_A = mat_A.tocsc()
-            
         mask_flat = mask.flatten()    
         for channel in range(source.shape[2]):
             source_flat = source[y_min:y_max, x_min:x_max, channel].flatten()
@@ -131,8 +126,6 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
         return target
 
     mask = find_mask(cls_dir, my_class)
-    
-    
     visualize_imgs()
     result = do_poissong_blending(source, mask, target)
     plt.imshow(result[::])
