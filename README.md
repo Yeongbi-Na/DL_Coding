@@ -15,7 +15,7 @@
 - [Poissong blending](https://github.com/Yeongbi-Na/GIAI/blob/main/data_preprocessing/poisong_blending.py)
 
 ### training models
-- [customize mmsegmentation](https://github.com/Yeongbi-Na/GIAI/blob/main/train_example/training_model.md)
+- [customize mmsegmentation](https://github.com/Yeongbi-Na/GIAI/tree/main/train_example)
 
 ### error note
 - [my error note during training models](https://github.com/Yeongbi-Na/GIAI/blob/main/error_note.md)
