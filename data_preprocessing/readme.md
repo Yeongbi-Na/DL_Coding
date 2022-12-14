@@ -5,6 +5,17 @@ annotation 이미지 클래스 매핑
 포아송 블렌딩 
 .py
 
+## Poissong blending
+``` 
+tgt_dir = 'R20220720A181020_GNRE.png'
+scr_dir = 'R20220720A180911_ann.png' #R20220720A181911_RGB
+ann_dir = 'R20220720A180911_ann.png'
+cls_dir = 'R20220720A180911_cls.png' #클래스 매핑 이미지
+result = poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, 5)
+```
+
+
+
 ## 기록
 ### 초기 계획
 1. ZipFile 모듈로 압축 풀지않고 데이터 가져와 format(jpg, png) 맞춰준후 ann_png/img_png 폴더에 저장
