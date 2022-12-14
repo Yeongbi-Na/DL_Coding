@@ -59,16 +59,13 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
         for i in range(len(x_idx)):
             x, y = x_idx[i], y_idx[i]
             if ann[x,y] == my_class:
-                
                 ann[x, y] = check_num
                 bfs(x, y)
                 #min max  구하기
                 box.append(np.where(ann == check_num))
                 check_num += 1
-           
         for i in range(len(box)):
             make_big_mask(box[i][0], box[i][1], (64, 64))
-            
         mask = cv2.resize(mask, dsize=(512, 512), interpolation = cv2.INTER_CUBIC)
         return mask
     
@@ -87,7 +84,6 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
         y_min, x_min = 0, 0
         x_range = x_max - x_min
         y_range = y_max - y_min
-
         M = np.float32([[1, 0, offset[0]], [0, 1, offset[1]]])
         source = cv2.warpAffine(source, M, (x_range, y_range))
         mask = cv2.warpAffine(mask, M, (x_range, y_range))
@@ -95,7 +91,6 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
         mask[mask != 0] = 1
         mat_A = laplacian_matrix(y_range, x_range)
         laplacian = mat_A.tocsc()
-                
         for y in range(1, y_range - 1):
             for x in range(1, x_range - 1):
                 if mask[y, x] == 0:
