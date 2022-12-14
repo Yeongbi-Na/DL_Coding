@@ -32,36 +32,37 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
     def find_mask(ann_path, my_class):
         ann = cv2.imread(ann_path, cv2.IMREAD_GRAYSCALE)
         ann = cv2.resize(ann, dsize=(64, 64), interpolation = cv2.INTER_CUBIC)
-        x_idx, y_idx = np.where(ann == my_class)
-        check_num = 10
-        box = []
-        mask = np.zeros(ann.shape)
-        
+       
         def make_big_mask(x, y, resize_shape):
-            offs = 3
+            offs = 2
             #ann[max(0, min(x)-offs):min(resize_shape[0], max(x)+offs), max(0, min(y)-offs):min(resize_shape[1], max(y)+offs)] = 255 #그냥 흰, 검으로 만들려고
             mask[max(0, min(x)-offs):min(resize_shape[0], max(x)+offs), max(0, min(y)-offs):min(resize_shape[1], max(y)+offs)] = 255
             return
+
         def bfs(i, j):
             q = deque()
             q.append([i, j])
-
             while q:
                 x, y = q.popleft()
                 for d in range(4):
-                    for ex in range(1, 3):
+                    for ex in range(1, 15):
                         nx, ny = x+dx[d]*ex, y+dy[d]*ex
                         if 0<=nx< ann.shape[0] and 0<=ny< ann.shape[1]:
                             if ann[nx,ny] == my_class:
                                 q.append([nx, ny])
                                 ann[nx, ny] = check_num
             return
-
+        
+        x_idx, y_idx = np.where(ann == my_class)
+        check_num = 100
+        box = []
+        mask = np.zeros(ann.shape)
         for i in range(len(x_idx)):
             x, y = x_idx[i], y_idx[i]
             if ann[x,y] == my_class:
-                bfs(x, y)
+                
                 ann[x, y] = check_num
+                bfs(x, y)
                 #min max  구하기
                 box.append(np.where(ann == check_num))
                 check_num += 1
@@ -134,6 +135,6 @@ def poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, my_class):
     
     visualize_imgs()
     result = do_poissong_blending(source, mask, target)
-    plt.imshow(result[::-1])
+    plt.imshow(result[::])
     plt.show()
     return result
