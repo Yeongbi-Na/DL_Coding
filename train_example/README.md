@@ -35,3 +35,16 @@ __base__외에 train_pipline, test_pipeline 등도 목적에 맞게 바꿔주면
 
 *원본을 복사해 수정하는 것을 적극 권장
 
+
+
+
+### 파라미터 헷갈렸던 거 정리
+``` 
+data = dict(
+    samples_per_gpu=4, # it means 4 batch sizes are used in one GPU
+    workers_per_gpu=4,)
+```
+
+1. samples_per_gpu : GPU 카드 한장당 batch_size , batch_size = samples_per_gpu*gpu개수
+2. workers_per_gpu: pytorch는 DataLoader를 통해서 CPU의 Data를 GPU로 넘기는데, 이때 병렬 프로세스를 몇개를 띄울 것인가(즉 몇개의 CPU Core 병렬로 사용할 것인가)를 설정(DataLoader의 num_workers와 동일 설정)
+
