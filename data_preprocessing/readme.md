@@ -4,6 +4,17 @@ annotation 이미지 클래스 매핑
 
 포아송 블렌딩 
 .py
+## Poissong blending 
+
+    
+    
+    tgt_dir = 'R20220720A181020_GNRE.png'
+    scr_dir = 'R20220720A180911_ann.png' #R20220720A181911_RGB
+    ann_dir = 'R20220720A180911_ann.png'
+    cls_dir = 'R20220720A180911_cls.png'
+    result = poissong_blending(scr_dir, tgt_dir, ann_dir, cls_dir, 5)
+
+
 
 ## 기록
 ### 초기 계획
